@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="cardContainer">
+    <h1 class="todoTitle">Todo App</h1>
+    <div class="cardInput">
+      <input [(ngModel)]="work" type="text" />
+      <input [(ngModel)]="isCompleted" type="checkbox" />
+      <button (click)="addTodoApp()" class="saveBtn">Save</button>
+    </div>
+
+    <ul *ngFor="let todo of todos">
+      <li *ngIf="todo.isCompleted">
+        <p>
+          {{ todo.work }}
+        </p>
+
+        <span style="color: green">{{ todo.isCompleted }}</span>
+      </li>
+      <li *ngIf="!todo.isCompleted">
+        {{ todo.work }} - <span style="color: red">{{ todo.isCompleted }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
